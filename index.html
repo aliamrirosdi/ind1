@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Path To Success ?</title>
+    <style>
+        /* Import futuristic fonts from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+        /* Define CSS variables for consistent cyberpunk colors and effects */
+        :root {
+            --neon-blue: #00ffff; /* Bright cyan/blue */
+            --neon-purple: #ff00ff; /* Bright magenta/purple */
+            --dark-bg: #1a0033; /* Very dark purple/indigo */
+            --mid-bg: #2b004d; /* Slightly lighter dark purple */
+            --light-text: #e0e0e0; /* Off-white for readability */
+            --glow-filter: drop-shadow(0 0 5px var(--neon-blue)) drop_shadow(0 0 10px var(--neon-blue)); /* Filter for glowing elements */
+            --glow-text: text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue); /* Text shadow for neon glow */
+        }
+
+        /* Base body styles */
+        body {
+            font-family: 'Share Tech Mono', monospace; /* Futuristic monospace font for body */
+            background-color: var(--dark-bg); /* Dark background */
+            color: var(--light-text); /* Light text for contrast */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+
+        /* Header styling */
+        header {
+            background-color: var(--mid-bg); /* Mid-tone background for header */
+            padding: 20px 40px;
+            border-bottom: 2px solid var(--neon-purple); /* Neon border at the bottom */
+            box-shadow: 0 0 15px var(--neon-purple); /* Glow effect for header */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+        }
+
+        /* Logo styling */
+        .logo {
+            font-family: 'Orbitron', sans-serif; /* Futuristic font for logo */
+            font-size: 2.5em;
+            color: var(--neon-blue); /* Neon blue color */
+            text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue); /* Strong neon glow */
+            filter: var(--glow-filter); /* Apply glow filter */
+        }
+
+        /* Navigation styling */
+        nav ul {
+            list-style: none; /* Remove bullet points */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Arrange navigation items in a row */
+        }
+
+        nav ul li {
+            margin-left: 30px; /* Spacing between navigation items */
+        }
+
+        nav ul li a {
+            color: var(--light-text); /* Default link color */
+            text-decoration: none; /* Remove underline */
+            font-size: 1.2em;
+            padding: 5px 10px;
+            transition: color 0.3s, text-shadow 0.3s; /* Smooth transition on hover */
+            border-radius: 5px; /* Slightly rounded corners for links */
+        }
+
+        nav ul li a:hover {
+            color: var(--neon-blue); /* Neon blue on hover */
+            text-shadow: 0 0 8px var(--neon-blue); /* Glow on hover */
+        }
+
+        /* Main content container styling */
+        .container {
+            flex-grow: 1; /* Allow container to grow and fill available space */
+            padding: 40px;
+            max-width: 1200px; /* Max width for content */
+            margin: 20px auto; /* Center the container with margin */
+            background-color: rgba(43, 0, 77, 0.6); /* Slightly transparent mid-bg for depth */
+            border: 1px solid var(--neon-purple); /* Neon border */
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5); /* Stronger glow for container */
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        /* Heading styles */
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
+            color: var(--neon-blue); /* Neon blue color */
+            text-shadow: 0 0 8px var(--neon-blue); /* Neon glow */
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Paragraph styling */
+        p {
+            line-height: 1.8; /* Improve readability */
+            margin-bottom: 15px;
+            text-align: justify; /* Justify text for a clean look */
+        }
+
+        /* Button styling */
+        .button {
+            display: inline-block; /* Allow padding and margin */
+            background-color: var(--neon-purple); /* Neon purple background */
+            color: var(--light-text); /* Light text on button */
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+            font-family: 'Orbitron', sans-serif; /* Futuristic font */
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 1px; /* Spacing between letters */
+            border: none; /* Remove default border */
+            cursor: pointer; /* Indicate clickable element */
+        }
+
+        .button:hover {
+            background-color: var(--neon-blue); /* Neon blue on hover */
+            box-shadow: 0 0 15px var(--neon-blue); /* Glow on hover */
+        }
+
+        /* Homepage Specifics */
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1)); /* Subtle gradient background */
+            border-bottom: 1px dashed var(--neon-blue); /* Dashed border */
+            margin-bottom: 30px;
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        .hero-section h1 {
+            font-size: 3.5em; /* Larger font size for main title */
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto; /* Center paragraph */
+            color: var(--light-text);
+        }
+
+        /* Second Page Specifics (Ordered List) */
+        ol {
+            list-style-type: decimal; /* Numbered list */
+            padding-left: 30px;
+            color: var(--light-text);
+        }
+
+        ol li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        ol li strong {
+            color: var(--neon-blue); /* Highlight important text in neon blue */
+            text-shadow: 0 0 5px var(--neon-blue); /* Glow effect */
+        }
+
+        /* Third Page Specifics (Table) */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Collapse table borders */
+            margin-top: 30px;
+            background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+            border: 1px solid var(--neon-purple); /* Neon border */
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.3); /* Subtle glow */
+            border-radius: 8px; /* Rounded corners for the table */
+            overflow: hidden; /* Ensures rounded corners apply to content */
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 0, 255, 0.3); /* Subtle border between rows */
+        }
+
+        th {
+            background-color: var(--mid-bg); /* Mid-tone background for table headers */
+            color: var(--neon-blue); /* Neon blue text for headers */
+            font-family: 'Orbitron', sans-serif; /* Futuristic font for headers */
+            text-shadow: 0 0 5px var(--neon-blue); /* Glow effect */
+            border-bottom: 2px solid var(--neon-blue); /* Stronger border below headers */
+        }
+
+        td {
+            color: var(--light-text);
+        }
+
+        table a {
+            color: var(--neon-blue); /* Neon blue links in table */
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        table a:hover {
+            color: var(--neon-purple); /* Neon purple on hover */
+            text-shadow: 0 0 5px var(--neon-purple); /* Glow on hover */
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: var(--mid-bg); /* Mid-tone background for footer */
+            color: var(--light-text);
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 2px solid var(--neon-blue); /* Neon border at the top */
+            box-shadow: 0 0 15px var(--neon-blue); /* Glow effect for footer */
+            border-radius: 8px 8px 0 0; /* Rounded top corners */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Stack logo and nav vertically */
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 2em;
+                margin-bottom: 15px;
+            }
+
+            nav ul {
+                flex-direction: column; /* Stack nav items vertically */
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0; /* Adjust spacing for stacked items */
+            }
+
+            .container {
+                padding: 20px;
+                margin: 10px auto;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-section p {
+                font-size: 1em;
+            }
+
+            th, td {
+                padding: 10px; /* Reduce padding for smaller screens */
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MY DREAM CAREER ?</div> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="guide.html">Guide</a></li>
+                <li><a href="inspiration.html">Inspiration</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="content-area" class="container">
+        </div>
+
+    <footer>
+        &copy; 2025 Ali Amri Dream Career
+    </footer>
+
+    <script>
+        // JavaScript for simple client-side routing and content loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentArea = document.getElementById('content-area');
+
+            // Function to load content based on the page name
+            function loadContent(pageName) {
+                let contentHTML = '';
+
+                // Determine which content to load based on the pageName
+                if (pageName === 'index.html' || pageName === '/') {
+                    // Homepage content
+                    contentHTML = `
+                        <div class="hero-section">
+                            <h1 style="font-size: 3.5em;">The Path to Success:<br>Achieving Your Career Dreams</h1>
+                         <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+        <img src="ali.jpg" alt="Ali Amri Bin Rosdi" style="width: 250px; height: 320px; border-radius: 15%; box-shadow: 0 0 15px var(--neon-blue); object-fit: cover;">
+                           <p style="flex: 1;">Hey there! I’m Ali Amri Bin Rosdi, a New Media Communication student at UniMAP, Perlis, passionate about bringing stories to life through photography, videography, and graphic design—especially surrounded by nature and animals that calm my soul. I enjoy capturing moments behind the camera and exploring new creative ways to connect and inspire. Studying this helps me build a flexible career where I can switch between roles as a photographer or designer, always returning to what makes my heart smile.</p>
+                            
+                                                    </div>
+                    `;
+                } else if (pageName === 'guide.html') {
+                    // Second Page: Step by Step Guide
+                    contentHTML = `
+                        <h2>Step by Step Guide to Reach My Career Goals</h2>
+                                                <ol>
+                            <li><strong>FINISH DEGREE:</strong> First, I want to finish my degree in New Media Communication so I can build solid skills.</li>
+
+                            <li><strong>LEARN NEW SKILLS:</strong>Then, I’ll dive into learning cool new things like videography, graphic design, and digital marketing to offer more than just photography.</li>
+
+                            <li><strong>MODERNIZE FAMILY BUSINESS:</strong>  After that, I plan to bring these fresh ideas into my parents’ photography shop to help grow and modernize the business.</li>
+
+                            <li><strong>TAKE OVER BUSINESS:</strong>The goal is to take over the family business someday and keep the tradition alive while making it even better.</li>
+
+                            <li><strong>BACKUP PLAN: FREELANCE:</strong> Kembangkan keupay But if things don’t go as planned, no worries—I’ll jump into freelancing and keep doing what I love, while still supporting the family in my own way.</li>
+                        </ol>
+                    `;
+                } else if (pageName === 'inspiration.html') {
+                    // Third Page: Inspiration & Resources
+                    contentHTML = `
+                        <h2 style="font-size: 3em;">Inspiration & Resources</h2>
+                                                <table>
+                            <thead>
+                                <tr>
+                                    <th>NAME</th>
+                                     <th>SOCIAL MEDIA ACCOUNT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@itsabiconnick</td>
+                                    <td><a href=https://www.instagram.com/itsabiconnick?igsh=MWN3djM2M2NxYjQyZg==" target="_blank">https://www.instagram.com/itsabiconnick?igsh=MWN3djM2M2NxYjQyZg==</a></td>
+                                </tr>
+                                <tr>
+                                    <td>@jordi.koalitic</td>
+                                    <td><a href=https://www.instagram.com/jordi.koalitic?igsh=MTMyNmd1Z3R6ZzJydw==" target="_blank">https://www.instagram.com/jordi.koalitic?igsh=MTMyNmd1Z3R6ZzJydw==</a></td>
+                                </tr>
+                                <tr>
+                                    <td>@mattchessco</td>
+                                    <td><a href=https://www.tiktok.com/@mattchessco?_t=ZS-8wn17VXgegf&_r=1" target="_blank">https://www.tiktok.com/@mattchessco?_t=ZS-8wn17VXgegf&_r=1</a></td>
+                                </tr>
+                                <tr>
+                                    <td>@stefankunz</td>
+                                    <td><a href=https://www.instagram.com/stefankunz?igsh=MTJ2eXM3cXZlMmw3aQ==" target="_blank">https://www.instagram.com/stefankunz?igsh=MTJ2eXM3cXZlMmw3aQ==</a></td>
+                                </tr>
+                                <tr>
+                                    <td>@mr.kalopsia</td>
+                                    <td><a href=https://www.instagram.com/mr.kalopsia?igsh=MXNkeGY4NHRlaTVo" target="_blank">https://www.instagram.com/mr.kalopsia?igsh=MXNkeGY4NHRlaTVo</a></td>
+                                </tr>
+                                                            </tbody>
+                        </table>
+                    `;
+                }
+
+                // Inject the generated HTML into the content area
+                if (contentArea) {
+                    contentArea.innerHTML = contentHTML;
+                }
+            }
+
+            // Get the current page from the URL query parameter
+            function getPageFromUrl() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('page') || 'index.html'; // Default to index.html
+            }
+
+            // Load content based on the URL query parameter on initial load
+            loadContent(getPageFromUrl());
+
+            // Add event listeners to navigation links to update content and URL
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    const href = this.getAttribute('href');
+                    const targetFileName = href.substring(href.lastIndexOf('/') + 1);
+                    loadContent(targetFileName); // Load content for the clicked link
+                    // Update URL using pushState with a query parameter
+                    history.pushState(null, '', `?page=${targetFileName}`);
+                });
+            });
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function() {
+                loadContent(getPageFromUrl());
+            });
+        });
+    </script>
+</body>
+</html>
